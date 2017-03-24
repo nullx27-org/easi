@@ -33,8 +33,9 @@ class Configuration
 
     public static function getInstance(): Configuration
     {
-        if (is_null(static::$instance))
+        if (is_null(static::$instance)) {
             static::$instance = new self();
+        }
 
         return static::$instance;
     }
@@ -86,7 +87,6 @@ class Configuration
     {
         return $this->apiClientConfig;
     }
-
 
     /**
      * @return mixed

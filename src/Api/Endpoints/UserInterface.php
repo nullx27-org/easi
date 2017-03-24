@@ -6,10 +6,8 @@ use nullx27\Easi\Api\Endpoint;
 use nullx27\Easi\Api\Models\UserInterfaceNewMail;
 use nullx27\ESI\Api\UserInterfaceApi;
 
-
 class UserInterface extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -40,5 +38,4 @@ class UserInterface extends Endpoint
     {
         return $this->apiClient->postUiOpenwindowNewmailWithHttpInfo($mail, $this->datasource);
     }
-
 }

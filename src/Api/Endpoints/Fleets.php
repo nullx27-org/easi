@@ -10,7 +10,6 @@ use nullx27\Easi\Api\Models\FleetSquadName;
 use nullx27\Easi\Api\Models\FleetWingName;
 use nullx27\ESI\Api\FleetsApi;
 
-
 class Fleets extends Endpoint
 {
     public function __construct($datasource)
@@ -78,5 +77,4 @@ class Fleets extends Endpoint
     {
         return $this->apiClient->putFleetsFleetIdWingsWingIdWithHttpInfo($fleetId, $wingId, $name->getModel(), $this->datasource);
     }
-
 }

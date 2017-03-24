@@ -7,7 +7,6 @@ use nullx27\ESI\Api\BookmarksApi;
 
 class Bookmarks extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -16,6 +15,7 @@ class Bookmarks extends Endpoint
 
     /**
      * @param int $characterId
+     *
      * @return mixed
      */
     public function getBookmarks(int $characterId)
@@ -25,6 +25,7 @@ class Bookmarks extends Endpoint
 
     /**
      * @param int $characterId
+     *
      * @return mixed
      */
     public function getFolders(int $characterId)

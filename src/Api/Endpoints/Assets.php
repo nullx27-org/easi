@@ -15,6 +15,7 @@ class Assets extends Endpoint
 
     /**
      * @param int $characterId
+     *
      * @return mixed
      */
     public function getCharacterAssets(int $characterId)

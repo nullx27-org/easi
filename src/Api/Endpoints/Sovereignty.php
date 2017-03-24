@@ -5,7 +5,6 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\SovereigntyApi;
 
-
 class Sovereignty extends Endpoint
 {
     public function __construct($datasource)
@@ -23,5 +22,4 @@ class Sovereignty extends Endpoint
     {
         return $this->apiClient->getSovereigntyStructuresWithHttpInfo($this->datasource);
     }
-
 }

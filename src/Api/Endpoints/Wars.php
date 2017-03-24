@@ -5,10 +5,8 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\WarsApi;
 
-
 class Wars extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;

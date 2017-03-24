@@ -5,10 +5,8 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\SearchApi;
 
-
 class Search extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -24,5 +22,4 @@ class Search extends Endpoint
     {
         return $this->apiClient->getSearchWithHttpInfo($search, $categories, $language, $strict, $this->datasource);
     }
-
 }

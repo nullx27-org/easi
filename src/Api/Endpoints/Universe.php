@@ -5,10 +5,8 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\UniverseApi;
 
-
 class Universe extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -84,5 +82,4 @@ class Universe extends Endpoint
     {
         return $this->apiClient->postUniverseNamesWithHttpInfo($ids, $this->datasource);
     }
-
 }

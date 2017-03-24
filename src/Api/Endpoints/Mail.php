@@ -10,7 +10,6 @@ use nullx27\ESI\Api\MailApi;
 
 class Mail extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -55,6 +54,7 @@ class Mail extends Endpoint
     public function createLabel(int $characterId, MailLabel $label = null)
     {
         $model = is_null($label) ? null : $label->getModel();
+
         return $this->apiClient->getCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $model, $this->datasource);
     }
 

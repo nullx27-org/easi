@@ -18,7 +18,7 @@ class Easi
     /**
      * @param string $token
      */
-    public function __construct(string $token = "")
+    public function __construct(string $token = '')
     {
         $this->config = Configuration::getInstance();
         $this->config->getApiClientConfig()->setAccessToken($token);
@@ -42,26 +42,27 @@ class Easi
 
     public function __get($name)
     {
-        $endpoint = __NAMESPACE__ . '\\Api\\Endpoints\\' . ucfirst($name);
+        $endpoint = __NAMESPACE__.'\\Api\\Endpoints\\'.ucfirst($name);
 
-        if (!class_exists($endpoint))
+        if (!class_exists($endpoint)) {
             throw new EndpointNotFoundException();
-
+        }
         $this->endpoint = $endpoint;
+
         return $this;
     }
 
     public function __call($name, $arguments)
     {
-        if (is_null($this->endpoint))
+        if (is_null($this->endpoint)) {
             throw new EndpointNotFoundException();
-
+        }
         $cache = $this->config->getCache();
 
         $args = array_flatten($arguments);
         $endpoint = substr(strrchr($this->endpoint, '\\'), 1);
 
-        $key = $endpoint . '|' . $this->token . '|' . $this->getConfig()->getDatasource() . '|' . implode('|', $args);
+        $key = $endpoint.'|'.$this->token.'|'.$this->getConfig()->getDatasource().'|'.implode('|', $args);
 
         if (!$cache->has($key)) {
             $instance = $this->getEndpoint($this->endpoint, $this->config->getDatasource());
@@ -79,7 +80,6 @@ class Easi
         }
 
         return new Response($raw);
-
     }
 
     /**
@@ -92,12 +92,10 @@ class Easi
 
     protected function getEndpoint(string $endpoint, string $datasource)
     {
-        if (!in_array($endpoint . $datasource, $this->endpoints)) {
-            $this->endpoints[$endpoint . $datasource] = new $endpoint($this->config->getDatasource());
+        if (!in_array($endpoint.$datasource, $this->endpoints)) {
+            $this->endpoints[$endpoint.$datasource] = new $endpoint($this->config->getDatasource());
         }
 
-        return $this->endpoints[$endpoint . $datasource];
+        return $this->endpoints[$endpoint.$datasource];
     }
-
-
 }

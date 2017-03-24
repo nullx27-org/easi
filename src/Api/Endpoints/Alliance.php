@@ -23,6 +23,7 @@ class Alliance extends Endpoint
 
     /**
      * @param int $allianceId
+     *
      * @return mixed
      */
     public function getAlliance(int $allianceId)
@@ -32,6 +33,7 @@ class Alliance extends Endpoint
 
     /**
      * @param int $allianceID
+     *
      * @return mixed
      */
     public function getCorporations(int $allianceID)
@@ -41,6 +43,7 @@ class Alliance extends Endpoint
 
     /**
      * @param int $allianceId
+     *
      * @return mixed
      */
     public function getLogo(int $allianceId)
@@ -50,6 +53,7 @@ class Alliance extends Endpoint
 
     /**
      * @param array $allianceIds
+     *
      * @return mixed
      */
     public function getAllianceNames(array $allianceIds)

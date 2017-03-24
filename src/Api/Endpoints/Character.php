@@ -8,7 +8,6 @@ use nullx27\ESI\Models\PostCharactersCharacterIdCspaCharacters;
 
 class Character extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;

@@ -2,7 +2,6 @@
 
 namespace nullx27\Easi\Api\Models;
 
-
 use nullx27\Easi\Api\Model;
 
 class FittingItem extends Model

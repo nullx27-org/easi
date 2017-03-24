@@ -5,10 +5,8 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\IndustryApi;
 
-
 class Industry extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -24,5 +22,4 @@ class Industry extends Endpoint
     {
         return $this->apiClient->getIndustrySystemsWithHttpInfo($this->datasource);
     }
-
 }

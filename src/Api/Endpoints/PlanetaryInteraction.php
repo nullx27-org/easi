@@ -5,10 +5,8 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\PlanetaryInteractionApi;
 
-
 class PlanetaryInteraction extends Endpoint
 {
-
     public function __construct($datasource)
     {
         $this->datasource = $datasource;
@@ -29,5 +27,4 @@ class PlanetaryInteraction extends Endpoint
     {
         return $this->apiClient->getCharactersCharacterIdPlanetsWithHttpInfo($schematicId, $this->datasource);
     }
-
 }

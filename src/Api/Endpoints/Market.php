@@ -5,7 +5,6 @@ namespace nullx27\Easi\Api\Endpoints;
 use nullx27\Easi\Api\Endpoint;
 use nullx27\ESI\Api\MarketApi;
 
-
 class Market extends Endpoint
 {
     public function __construct($datasource)
@@ -33,5 +32,4 @@ class Market extends Endpoint
     {
         return $this->apiClient->getMarketsStructuresStructureIdWithHttpInfo($structureId, $page, $this->datasource);
     }
-
 }
