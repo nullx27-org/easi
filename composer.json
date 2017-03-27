@@ -1,8 +1,16 @@
 {
     "name": "nullx27/easi",
     "description": "PHP Interface for EVE Onlines ESI Api",
+    "version": "1.0",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "eve-online",
+        "php",
+        "esi",
+        "lib",
+        "api"
+    ],
     "authors": [
         {
             "name": "Andre Peiffer",
@@ -10,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0",
+        "php": "^7.0",
         "nullx27/esi-php": "^1.1",
         "psr/cache": "^1.0",
         "cache/array-adapter": "^0.5.0",
