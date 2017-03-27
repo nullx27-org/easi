@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File Api/Models/Mail.php</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?70c1d062672daa3f906b72e4f5d03d4bc5c4174d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-nullx27.Easi.Api.Models.html" title="Summary of nullx27\Easi\Api\Models"><span>Namespace</span></a>
+					</li>
+					<li>
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-nullx27.html">
+							nullx27<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-nullx27.Easi.html">
+							Easi<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-nullx27.Easi.Api.html">
+							Api<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-nullx27.Easi.Api.Endpoints.html">
+							Endpoints						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-nullx27.Easi.Api.Models.html">
+							Models						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-nullx27.Easi.Exceptions.html">
+							Exceptions						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-nullx27.Easi.Api.Models.CalendarEventResponse.html">CalendarEventResponse</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.Fitting.html">Fitting</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FittingItem.html">FittingItem</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FleetInvitation.html">FleetInvitation</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FleetMovement.html">FleetMovement</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FleetSettings.html">FleetSettings</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FleetSquadName.html">FleetSquadName</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.FleetWingName.html">FleetWingName</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.Mail.html">Mail</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.MailLabel.html">MailLabel</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.MailMetadata.html">MailMetadata</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.MailRecipient.html">MailRecipient</a></li>
+				<li><a href="class-nullx27.Easi.Api.Models.UserInterfaceNewMail.html">UserInterfaceNewMail</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="source">
+	<pre class="numbers"><code><span class="l"><a href="#1"> 1 </a></span><span class="l"><a href="#2"> 2 </a></span><span class="l"><a href="#3"> 3 </a></span><span class="l"><a href="#4"> 4 </a></span><span class="l"><a href="#5"> 5 </a></span><span class="l"><a href="#6"> 6 </a></span><span class="l"><a href="#7"> 7 </a></span><span class="l"><a href="#8"> 8 </a></span><span class="l"><a href="#9"> 9 </a></span><span class="l"><a href="#10">10 </a></span><span class="l"><a href="#11">11 </a></span><span class="l"><a href="#12">12 </a></span></span><span class="l"><a href="#13">13 </a></span></span><span class="l"><a href="#14">14 </a></span><span class="l"><a href="#15">15 </a></span><span class="l"><a href="#16">16 </a></span><span class="l"><a href="#17">17 </a></span><span class="l"><a href="#18">18 </a></span><span class="l"><a href="#19">19 </a></span><span class="l"><a href="#20">20 </a></span><span class="l"><a href="#21">21 </a></span></code></pre>
+	<pre class="code"><code><span id="1" class="l"><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l">
+</span><span id="3" class="l"><span class="php-keyword1">namespace</span> nullx27\Easi\Api\Models;
+</span><span id="4" class="l">
+</span><span id="5" class="l"><span class="php-keyword1">use</span> nullx27\Easi\Api\Model;
+</span><span id="6" class="l">
+</span><span id="7" class="l"><span class="php-keyword1">class</span> <span class="php-keyword2">Mail</span> <span class="php-keyword1">extends</span> Model
+</span><span id="8" class="l">{
+</span><span id="9" class="l">    <span class="php-keyword1">protected</span> <span class="php-var">$class</span> = \nullx27\ESI\Models\PostCharactersCharacterIdMailMail::<span class="php-keyword1">class</span>;
+</span><span id="10" class="l">    <span class="php-keyword1">protected</span> <span class="php-var">$recipient</span> = [];
+</span><span id="11" class="l">
+</span><span id="12" class="l">    <span class="php-comment">/**
+</span></span><span id="13" class="l"><span class="php-comment">     * @param MailRecipient $recipient
+</span></span><span id="14" class="l"><span class="php-comment">     */</span>
+</span><span id="15" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> addRecipient(MailRecipient <span class="php-var">$recipient</span>)
+</span><span id="16" class="l">    {
+</span><span id="17" class="l">        <span class="php-var">$this</span>-&gt;recipient[] = <span class="php-var">$recipient</span>-&gt;getModel();
+</span><span id="18" class="l">        <span class="php-var">$this</span>-&gt;setRecipients(<span class="php-var">$this</span>-&gt;recipient);
+</span><span id="19" class="l">    }
+</span><span id="20" class="l">}
+</span><span id="21" class="l"></span></code></pre>
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js?a7ca990703f6ab8e642ddab4b6dc61ceaf8d0e54"></script>
+<script src="elementlist.js?8bb9effbb03d278fd9b5d5ef7be687c867cfd431"></script>
+</body>
+</html>
