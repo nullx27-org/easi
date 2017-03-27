@@ -7,6 +7,7 @@ use nullx27\Easi\Api\Endpoint;
 use nullx27\Easi\Api\Response;
 use nullx27\Easi\Exceptions\EndpointNotFoundException;
 use nullx27\Easi\Exceptions\MethodNotFoundException;
+use nullx27\ESI\ApiException;
 
 /**
  * Class Easi
@@ -123,7 +124,12 @@ class Easi
                 throw new MethodNotFoundException();
             }
 
-            $raw = call_user_func_array([$instance, $name], $arguments);
+            try {
+                $raw = call_user_func_array([$instance, $name], $arguments);
+            } catch (ApiException $exception) {
+                throw new \nullx27\Easi\Exceptions\ApiException($exception->getResponseBody()->error, $exception->getCode());
+            }
+
             $ttl = Carbon::parse($raw[2]['Expires'])->diffInMinutes();
 
             $cache->set($key, $raw, $ttl);
