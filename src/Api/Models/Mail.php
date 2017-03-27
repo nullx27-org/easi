@@ -6,12 +6,15 @@ use nullx27\Easi\Api\Model;
 
 class Mail extends Model
 {
-    protected $_class = \nullx27\ESI\Models\PostCharactersCharacterIdMailMail::class;
-    protected $_recipient = [];
+    protected $class = \nullx27\ESI\Models\PostCharactersCharacterIdMailMail::class;
+    protected $recipient = [];
 
-    public function addRecipient(MailRecipient $recipient): void
+    /**
+     * @param MailRecipient $recipient
+     */
+    public function addRecipient(MailRecipient $recipient)
     {
-        $this->_recipient[] = $recipient->getModel();
-        $this->setRecipients($this->_recipient);
+        $this->recipient[] = $recipient->getModel();
+        $this->setRecipients($this->recipient);
     }
 }

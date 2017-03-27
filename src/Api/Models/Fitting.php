@@ -6,13 +6,16 @@ use nullx27\Easi\Api\Model;
 
 class Fitting extends Model
 {
-    protected $_class = \nullx27\ESI\Models\PostCharactersCharacterIdFittingsFitting::class;
+    protected $class = \nullx27\ESI\Models\PostCharactersCharacterIdFittingsFitting::class;
 
-    protected $_items = [];
+    protected $items = [];
 
-    public function addItem(FittingItem $item): void
+    /**
+     * @param FittingItem $item
+     */
+    public function addItem(FittingItem $item)
     {
-        $this->_items[] = $item->getModel();
-        $this->setItems($this->_items);
+        $this->items[] = $item->getModel();
+        $this->setItems($this->items);
     }
 }

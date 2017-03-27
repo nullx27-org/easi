@@ -6,5 +6,5 @@ use nullx27\Easi\Api\Model;
 
 class FleetInvitation extends Model
 {
-    protected $_class = \nullx27\ESI\Models\PostFleetsFleetIdMembersInvitation::class;
+    protected $class = \nullx27\ESI\Models\PostFleetsFleetIdMembersInvitation::class;
 }

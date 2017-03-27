@@ -6,5 +6,5 @@ use nullx27\Easi\Api\Model;
 
 class MailMetadata extends Model
 {
-    protected $_class = \nullx27\ESI\Models\PutCharactersCharacterIdMailMailIdContents::class;
+    protected $class = \nullx27\ESI\Models\PutCharactersCharacterIdMailMailIdContents::class;
 }

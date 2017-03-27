@@ -6,5 +6,5 @@ use nullx27\Easi\Api\Model;
 
 class MailRecipient extends Model
 {
-    protected $_class = \nullx27\ESI\Models\CharacterscharacterIdmailRecipients1::class;
+    protected $class = \nullx27\ESI\Models\CharacterscharacterIdmailRecipients1::class;
 }

@@ -4,41 +4,73 @@ namespace nullx27\Easi\Api;
 
 use nullx27\Easi\Exceptions\InvalidModelDataException;
 
+/**
+ * Class Model
+ * @package nullx27\Easi\Api
+ */
 abstract class Model
 {
-    protected $_class;
-    protected $_model;
+    /**
+     * esi-php model class
+     *
+     * @var string
+     */
+    protected $class;
 
+    /**
+     * esi-php model instance
+     * @var mixed
+     */
+    protected $model;
+
+    /**
+     * Model constructor.
+     * @param array $data
+     */
     public function __construct(array $data)
     {
-        $this->_model = new $this->_class($data);
-    }
-
-    public function __call($name, $arguments)
-    {
-        return call_user_func_array($this->_model, $arguments);
+        $this->model = new $this->class($data);
     }
 
     /**
-     * @throws InvalidModelDataException
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     */
+    public function __call($name, $arguments)
+    {
+        return call_user_func_array($this->model, $arguments);
+    }
+
+    /**
+     * get populated esi-php model
      *
      * @return mixed
+     * @throws InvalidModelDataException
      */
     public function getModel()
     {
-        if (!$this->_model->valid()) {
-            throw new InvalidModelDataException($this->_model->listInvalidProperties());
+        if (!$this->model->valid()) {
+            throw new InvalidModelDataException($this->model->listInvalidProperties());
         }
-        return $this->_model;
+        return $this->model;
     }
 
-    public function __get($name)
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function __get(string $name)
     {
-        return $this->_model[$name];
+        return $this->model[$name];
     }
 
-    public function __set($name, $value)
+    /**
+     * @param string $name
+     * @param string $value
+     */
+    public function __set(string $name, string $value)
     {
-        $this->_model[$name] = $value;
+        $this->model[$name] = $value;
     }
 }

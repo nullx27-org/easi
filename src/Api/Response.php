@@ -4,15 +4,49 @@ namespace nullx27\Easi\Api;
 
 use Carbon\Carbon;
 
+/**
+ * Class Response
+ * @package nullx27\Easi\Api
+ */
 class Response
 {
+    /**
+     * Raw endpoint response data
+     * @var array
+     */
     public $data = [];
 
+    /**
+     * HTTP Response status code
+     *
+     * @var int
+     */
     public $code = 0;
+
+    /**
+     * Serverside cache expiry
+     * @var Carbon
+     */
     public $expires;
+
+    /**
+     * Last serverside data change
+     *
+     * @var Carbon
+     */
     public $lastModified;
+
+    /**
+     * Raw HTTP Response headers
+     *
+     * @var array
+     */
     public $headers = [];
 
+    /**
+     * Response constructor.
+     * @param array $data Raw endpoint response data
+     */
     public function __construct(array $data)
     {
         $this->data = $data[0];
@@ -23,7 +57,13 @@ class Response
         $this->lastModified = Carbon::parse($this->headers['Last-Modified']);
     }
 
-    public function __get($name)
+    /**
+     * Get endpoint response data
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function __get(string $name)
     {
         return $this->data[$name];
     }
