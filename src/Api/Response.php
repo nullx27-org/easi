@@ -5,39 +5,40 @@ namespace nullx27\Easi\Api;
 use Carbon\Carbon;
 
 /**
- * Class Response
- * @package nullx27\Easi\Api
+ * Class Response.
  */
 class Response
 {
     /**
-     * Raw endpoint response data
+     * Raw endpoint response data.
+     *
      * @var array
      */
     public $data = [];
 
     /**
-     * HTTP Response status code
+     * HTTP Response status code.
      *
      * @var int
      */
     public $code = 0;
 
     /**
-     * Serverside cache expiry
+     * Serverside cache expiry.
+     *
      * @var Carbon
      */
     public $expires;
 
     /**
-     * Last serverside data change
+     * Last serverside data change.
      *
      * @var Carbon
      */
     public $lastModified;
 
     /**
-     * Raw HTTP Response headers
+     * Raw HTTP Response headers.
      *
      * @var array
      */
@@ -45,6 +46,7 @@ class Response
 
     /**
      * Response constructor.
+     *
      * @param array $data Raw endpoint response data
      */
     public function __construct(array $data)
@@ -58,9 +60,10 @@ class Response
     }
 
     /**
-     * Get endpoint response data
+     * Get endpoint response data.
      *
      * @param string $name
+     *
      * @return mixed
      */
     public function __get(string $name)

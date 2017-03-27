@@ -5,26 +5,27 @@ namespace nullx27\Easi\Api;
 use nullx27\Easi\Exceptions\InvalidModelDataException;
 
 /**
- * Class Model
- * @package nullx27\Easi\Api
+ * Class Model.
  */
 abstract class Model
 {
     /**
-     * esi-php model class
+     * esi-php model class.
      *
      * @var string
      */
     protected $class;
 
     /**
-     * esi-php model instance
+     * esi-php model instance.
+     *
      * @var mixed
      */
     protected $model;
 
     /**
      * Model constructor.
+     *
      * @param array $data
      */
     public function __construct(array $data)
@@ -35,6 +36,7 @@ abstract class Model
     /**
      * @param $name
      * @param $arguments
+     *
      * @return mixed
      */
     public function __call($name, $arguments)
@@ -43,21 +45,24 @@ abstract class Model
     }
 
     /**
-     * get populated esi-php model
+     * get populated esi-php model.
+     *
+     * @throws InvalidModelDataException
      *
      * @return mixed
-     * @throws InvalidModelDataException
      */
     public function getModel()
     {
         if (!$this->model->valid()) {
             throw new InvalidModelDataException($this->model->listInvalidProperties());
         }
+
         return $this->model;
     }
 
     /**
      * @param string $name
+     *
      * @return mixed
      */
     public function __get(string $name)

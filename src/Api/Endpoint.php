@@ -3,20 +3,19 @@
 namespace nullx27\Easi\Api;
 
 /**
- * Class Endpoint
- * @package nullx27\Easi\Api
+ * Class Endpoint.
  */
 abstract class Endpoint
 {
     /**
-     * esi-php endpoint api client
+     * esi-php endpoint api client.
      *
      * @var mixed
      */
     protected $apiClient;
 
     /**
-     * ESI datasource
+     * ESI datasource.
      *
      * @var string
      */

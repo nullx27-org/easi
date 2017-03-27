@@ -10,8 +10,7 @@ use nullx27\Easi\Exceptions\MethodNotFoundException;
 use nullx27\ESI\ApiException;
 
 /**
- * Class Easi
- * @package nullx27\Easi
+ * Class Easi.
  */
 class Easi
 {
@@ -45,7 +44,8 @@ class Easi
     }
 
     /**
-     * Get access token
+     * Get access token.
+     *
      * @return string
      */
     public function getToken(): string
@@ -54,7 +54,7 @@ class Easi
     }
 
     /**
-     * set access token
+     * set access token.
      *
      * @param string $token
      */
@@ -64,10 +64,13 @@ class Easi
     }
 
     /**
-     *  Set endpoint
+     *  Set endpoint.
+     *
      * @param string $name Endpoint name
-     * @return Easi
+     *
      * @throws EndpointNotFoundException
+     *
+     * @return Easi
      */
     public function __get(string $name): Easi
     {
@@ -84,7 +87,7 @@ class Easi
     }
 
     /**
-     * Get Configuration instance
+     * Get Configuration instance.
      *
      * @return Configuration
      */
@@ -94,13 +97,15 @@ class Easi
     }
 
     /**
-     * Call endpoint method
+     * Call endpoint method.
      *
-     * @param string $name Method name
-     * @param array $arguments
-     * @return Response
+     * @param string $name      Method name
+     * @param array  $arguments
+     *
      * @throws EndpointNotFoundException
      * @throws MethodNotFoundException
+     *
+     * @return Response
      */
     public function __call(string $name, array $arguments): Response
     {
@@ -143,10 +148,11 @@ class Easi
     }
 
     /**
-     * Get Endpoint instance
+     * Get Endpoint instance.
      *
      * @param string $endpoint
      * @param string $datasource
+     *
      * @return Endpoint
      */
     protected function getEndpoint(string $endpoint, string $datasource): Endpoint

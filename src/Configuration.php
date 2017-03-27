@@ -9,37 +9,41 @@ use Psr\Log\NullLogger;
 use Psr\SimpleCache\CacheInterface;
 
 /**
- * Class Configuration
- * @package nullx27\Easi
+ * Class Configuration.
  */
 class Configuration
 {
     /**
-     * Singleton instance
+     * Singleton instance.
+     *
      * @var null
      */
     protected static $instance = null;
 
     /**
-     * PSR-16 compatible Cache instance
+     * PSR-16 compatible Cache instance.
+     *
      * @var CacheInterface
      */
     private $cache;
 
     /**
-     * PSR-3 compatible logger
+     * PSR-3 compatible logger.
+     *
      * @var LoggerInterface
      */
     private $logger;
 
     /**
-     * ESI Datasource
+     * ESI Datasource.
+     *
      * @var string
      */
     private $datasource = 'tranquility';
 
     /**
-     * esi-php api client config
+     * esi-php api client config.
+     *
      * @var \nullx27\ESI\Configuration
      */
     private $apiClientConfig;
@@ -47,7 +51,7 @@ class Configuration
     /**
      * Configuration constructor.
      */
-    private final function __construct()
+    final private function __construct()
     {
         $this->apiClientConfig = \nullx27\ESI\Configuration::getDefaultConfiguration();
         $this->setUseragent('nullx27/easi');
@@ -56,7 +60,8 @@ class Configuration
     }
 
     /**
-     * Set useragent
+     * Set useragent.
+     *
      * @param string $useragent
      */
     public function setUseragent(string $useragent)
@@ -65,8 +70,10 @@ class Configuration
     }
 
     /**
-     * Get signleton instance
+     * Get signleton instance.
+     *
      * @static
+     *
      * @return Configuration
      */
     public static function getInstance(): Configuration
@@ -79,7 +86,8 @@ class Configuration
     }
 
     /**
-     * Get Logger
+     * Get Logger.
+     *
      * @return LoggerInterface
      */
     public function getLogger(): LoggerInterface
@@ -88,7 +96,8 @@ class Configuration
     }
 
     /**
-     * Set Logger
+     * Set Logger.
+     *
      * @param LoggerInterface $logger
      */
     public function setLogger(LoggerInterface $logger)
@@ -97,7 +106,7 @@ class Configuration
     }
 
     /**
-     * Get ESI datasource
+     * Get ESI datasource.
      *
      * @return string
      */
@@ -107,7 +116,7 @@ class Configuration
     }
 
     /**
-     * Set ESI datasource
+     * Set ESI datasource.
      *
      * @param string $datasource
      */
@@ -117,7 +126,7 @@ class Configuration
     }
 
     /**
-     * Get HTTP Useragent
+     * Get HTTP Useragent.
      *
      * @return string
      */
@@ -127,7 +136,7 @@ class Configuration
     }
 
     /**
-     * Get esi-php api client configuraiton
+     * Get esi-php api client configuraiton.
      *
      * @return \nullx27\ESI\Configuration
      */
@@ -137,7 +146,7 @@ class Configuration
     }
 
     /**
-     * Get Cache
+     * Get Cache.
      *
      * @return CacheInterface
      */
@@ -147,7 +156,7 @@ class Configuration
     }
 
     /**
-     * Set Cache
+     * Set Cache.
      *
      * @param CacheInterface $cache
      */
