@@ -42,6 +42,8 @@ $wallet = $easi->wallet->getCharacterWallet($characterId);
 print_r($wallet->data);
 ```
 
+#### For a full list of all available endpoints and methods see [here](https://nullx27.github.io/easi/namespace-nullx27.Easi.Api.Endpoints.html)
+
 ## Configuration
 
 Easi can use any PSR-16 compatible caching libary to stay in line with CCP request guidelines
