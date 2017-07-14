@@ -75,7 +75,7 @@ class Universe extends Endpoint
 
     public function getType(int $typeId, string $language = 'en-us')
     {
-        return $this->apiClient->getUniverseTypesTypeIdWithHttpInfo($typeId, $language, $this->datasource);
+        return $this->apiClient->getUniverseTypesTypeIdWithHttpInfo($typeId, $this->datasource, $language);
     }
 
     public function getNames(array $ids)
