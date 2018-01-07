@@ -99,13 +99,13 @@ class Easi
     /**
      * Call endpoint method.
      *
-     * @param string $name      Method name
-     * @param array  $arguments
-     *
-     * @throws EndpointNotFoundException
-     * @throws MethodNotFoundException
+     * @param string $name Method name
+     * @param array $arguments
      *
      * @return Response
+     * @throws EndpointNotFoundException
+     * @throws Exceptions\ApiException
+     * @throws MethodNotFoundException
      */
     public function __call(string $name, array $arguments): Response
     {
