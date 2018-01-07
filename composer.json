@@ -1,7 +1,7 @@
 {
     "name": "nullx27/easi",
     "description": "PHP Interface for EVE Onlines ESI Api",
-    "version": "1.2.2",
+    "version": "1.2.4",
     "type": "library",
     "license": "MIT",
     "keywords": [
