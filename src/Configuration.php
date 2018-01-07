@@ -76,7 +76,7 @@ class Configuration
      *
      * @return Configuration
      */
-    public static function getInstance(): Configuration
+    public static function getInstance(): self
     {
         if (is_null(static::$instance)) {
             static::$instance = new self();

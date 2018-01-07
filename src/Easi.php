@@ -72,12 +72,13 @@ class Easi
      *
      * @return Easi
      */
-    public function __get(string $name): Easi
+    public function __get(string $name): self
     {
         $endpoint = __NAMESPACE__.'\\Api\\Endpoints\\'.ucfirst($name);
 
         if (!class_exists($endpoint)) {
             $this->getConfig()->getLogger()->error('Endpoint {endpoint] not found!', ['endpoint' => $endpoint]);
+
             throw new EndpointNotFoundException();
         }
 
@@ -99,13 +100,14 @@ class Easi
     /**
      * Call endpoint method.
      *
-     * @param string $name Method name
-     * @param array $arguments
+     * @param string $name      Method name
+     * @param array  $arguments
      *
-     * @return Response
      * @throws EndpointNotFoundException
      * @throws Exceptions\ApiException
      * @throws MethodNotFoundException
+     *
+     * @return Response
      */
     public function __call(string $name, array $arguments): Response
     {
@@ -126,6 +128,7 @@ class Easi
 
             if (!method_exists($instance, $name)) {
                 $this->getConfig()->getLogger()->error('{endpoint}::{method} not found!', ['endpoint' => $endpoint, 'method' => $name]);
+
                 throw new MethodNotFoundException();
             }
 
