@@ -1,3 +1,5 @@
+# THIS LIBRARY IS NO LONGER MAINTAINED
+
 # Easi - A Eve Online ESI Api wrapper 
 
 <a href="https://styleci.io/repos/86077357"><img src="https://styleci.io/repos/86077357/shield" alt="StyleCI"></a>
