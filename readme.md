@@ -23,7 +23,7 @@ composer require nullx27/easi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $easi = new \nullx27\Easi\Easi();
-$alliance = $easi->alliance->getAllianceById(99006112);
+$alliance = $easi->alliance->getAlliance(99006112);
 
 print $alliance->allianceName; // Friendly Probes
 ```
